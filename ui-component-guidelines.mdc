@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+## UI Components - ALWAYS USE THESE FIRST
+Located at [src/components/ui/](mdc:src/components/ui)
+
+**Common Components:**
+- **Button** - Use instead of `<button>`
+- **Input** - Use instead of `<input>`
+- **Card** - For containers and layouts
+- **Dialog** - For modals
+- **Form** - For forms with validation
+- **Table** - For data tables
+- **Badge** - For status/labels
+- **Skeleton** - For loading states
+- **Alert** - For messages/errors
+
+**See full list:** [src/components/ui/](mdc:src/components/ui) has 45+ components available
+
+## Project Structure
+- [src/app/](mdc:src/app) - Next.js pages
+- [src/components/](mdc:src/components) - Custom components  
+- [src/lib/utils.ts](mdc:src/lib/utils.ts) - Utilities (includes `cn()` function)
+- [src/hooks/](mdc:src/hooks) - Custom hooks
+
+## Quick Rules
+1. **Import UI components:** `import { Button } from "@/components/ui/button"`
+2. **Use cn() for classes:** `import { cn } from "@/lib/utils"`
+3. **TypeScript required** - proper types for all components
+
+## Example
+```tsx
+// ✅ Good
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+<Button className={cn("custom-class", condition && "extra-class")}>
+  Click me
+</Button>
+
+// ❌ Bad  
+<button className="...">Click me</button>
+```
