@@ -1,0 +1,92 @@
+---
+description: Next.js React TypeScript Cursor Rules
+globs: 
+alwaysApply: true
+---
+You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI and Tailwind.
+  
+  Code Style and Structure
+  - Write concise, technical TypeScript code with accurate examples.
+  - Use functional and declarative programming patterns; avoid classes.
+  - Prefer iteration and modularization over code duplication.
+  - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+  - Structure files: exported component, subcomponents, helpers, static content, types.
+  
+  Naming Conventions
+  - Use lowercase with dashes for directories (e.g., components/auth-wizard).
+  - Favor named exports for components.
+  
+  TypeScript Usage
+  - Use TypeScript for all code; prefer interfaces over types.
+  - Avoid enums; use maps instead.
+  - Use functional components with TypeScript interfaces.
+  
+  Syntax and Formatting
+  - Use the "function" keyword for pure functions.
+  - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+  - Use declarative JSX.
+  
+  UI and Styling
+  - Use Shadcn UI, Radix, and Tailwind for components and styling.
+  - Always implement mobile-first responsive design with Tailwind CSS.
+  - Design for mobile screens first (320px-768px), then progressively enhance for larger screens.
+  - Use Tailwind's responsive prefixes: sm: (640px+), md: (768px+), lg: (1024px+), xl: (1280px+), 2xl: (1536px+).
+  
+  Mobile-First & Responsive Design
+  - ALWAYS start with mobile layout and styling (base classes without prefixes).
+  - Use responsive breakpoints to enhance the experience on larger screens:
+    * Base styles: Mobile (320px-639px) - no prefix needed
+    * sm: Small tablets (640px+) 
+    * md: Tablets (768px+)
+    * lg: Small desktops (1024px+)
+    * xl: Large desktops (1280px+)
+    * 2xl: Extra large screens (1536px+)
+  
+  - Layout Principles:
+    * Use flex-col on mobile, flex-row on larger screens when appropriate
+    * Implement collapsible navigation (hamburger menu) for mobile
+    * Stack elements vertically on mobile, arrange horizontally on desktop
+    * Use full-width containers on mobile, max-width containers on desktop
+  
+  - Typography & Spacing:
+    * Start with smaller text sizes for mobile (text-sm, text-base)
+    * Increase font sizes on larger screens (md:text-lg, lg:text-xl)
+    * Use tighter spacing on mobile (p-4, gap-2), increase on desktop (md:p-6, lg:gap-4)
+    * Ensure minimum 44px touch targets for interactive elements on mobile
+  
+  - Interactive Elements:
+    * Design for touch-first interaction (larger buttons, adequate spacing)
+    * Use hover states only on larger screens (lg:hover:bg-gray-100)
+    * Implement swipe gestures and touch-friendly interactions
+    * Consider thumb-reach zones on mobile devices
+  
+  - Content Strategy:
+    * Prioritize critical content above the fold on mobile
+    * Use progressive disclosure (show more content on larger screens)
+    * Implement collapsible sections for mobile content organization
+    * Hide non-essential elements on mobile using hidden sm:block or similar
+  
+  - Performance for Mobile:
+    * Optimize images with responsive sizes using Next.js Image component
+    * Use smaller image variants on mobile (w-full max-w-sm on mobile, max-w-md on tablet)
+    * Implement lazy loading for below-the-fold content
+    * Minimize bundle size for mobile users with dynamic imports
+  
+  Performance Optimization
+  - Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
+  - Wrap client components in Suspense with fallback.
+  - Use dynamic loading for non-critical components.
+  - Optimize images: use WebP format, include size data, implement lazy loading.
+  
+  Key Conventions
+  - Optimize Web Vitals (LCP, CLS, FID).
+  - Prefer server actions over /api routes for server-side logic:
+    - Use server actions for form submissions, data mutations, and server-side operations.
+    - Reserve /api routes only when absolutely necessary (e.g., webhooks, third-party integrations).
+    - Server actions provide better type safety, performance, and developer experience.
+  - Limit 'use client':
+    - Favor server components and Next.js SSR.
+    - Use only for Web API access in small components.
+    - Avoid for data fetching or state management.
+  
+  Follow Next.js docs for Data Fetching, Rendering, and Routing.
